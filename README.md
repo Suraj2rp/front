@@ -91,5 +91,4 @@ Example:
 ## 👨‍💻 Author
 
 Developed by **Suraj Prajapati**
-📧 [[your.email@example.com](mailto:your.email@example.com)]
-💼 [Your LinkedIn or Portfolio link]
+
