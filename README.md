@@ -64,7 +64,7 @@ Front/
 
 ## 📸 Preview
 
-*(Add your screenshot or live demo link here)*
+
 Example:
 ![Front Preview](./assets/images/preview.png)
 ![Mobile Preview](./assets/images/mobile_preview.png)
