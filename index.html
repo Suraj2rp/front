@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume Service - Pixel-Perfect</title>
+
+  <!-- Google font used to match Figma feel; replace if Figma uses another -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <!-- Replace with exported logo from Figma with exact dimensions -->
+        <img src="/assets/logo.png" alt="Company logo" width="170" height="48">
+      </div>
+
+  <nav class="desktop-nav">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Our Services</a>
+    <a href="#">Pricing</a>
+    <a href="#">FAQ</a>
+  </nav>
+
+  <div class="header-cta">
+    <button class="btn-quote">Get A Quote</button>
+    <button class="hamburger" id="hamburger" aria-label="Open Menu">
+      <!-- simple hamburger icon -->
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+  </header>
+
+  <!-- Mobile slide-in menu -->
+
+  <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu">
+      <div class="mobile-menu-top">
+        <img src="/assets/logo.png" alt="Logo" width="170" height="48">
+        <button class="menu-close" id="menuClose" aria-label="Close Menu">✕</button>
+      </div>
+
+  <ul class="mobile-menu-list">
+  <li class="active"><span class="icon"><i class="fa-solid fa-house"></i></span> <a href="#">Home</a></li>
+  <li><span class="icon"><i class="fa-solid fa-circle-info"></i></span> <a href="#">About Us</a></li>
+  <li><span class="icon"><i class="fa-solid fa-hand-holding-heart"></i></span> <a href="#">Our Services</a></li>
+  <li><span class="icon"><i class="fa-solid fa-tag"></i></span> <a href="#">Pricing</a></li>
+  <li><span class="icon"><i class="fa-solid fa-question-circle"></i></span> <a href="#">FAQ</a></li>
+</ul>
+
+
+  <div class="mobile-menu-cta">
+    <button class="btn-contact">CONTACT US</button>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Hero section -->
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="eyebrow">Your Resume</h1>
+          <h2 class="headline">
+            <span class="line1">
+  Deserves A <img class="underline-image" src="/assets/underline.png" alt="#"> Yes</span> <span class="line2">Let’s</span> <span class="line3">Make It Happen</span>
+            
+          </h2>
+
+      <p class="hero-sub">
+        If Your Resume Isn’t Getting Responses, It’s Time For An Upgrade.
+        Get An ATS-Optimized Resume Crafted By HR Experts To Help You Land More Interviews.
+        Our Resumes Are Designed To Get Your Foot In The Door And Place Your Name At The Top Of The Shortlist.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-outline">RESUME PAKAGES</button>
+        <button class="btn-primary">CONTACT US</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Replace with exported hero person image (desktop hero art) -->
+      <img src="/assets/smiling.png" alt="Student holding book" class="hero-image">
+
+      <!-- small cards on hero image -->
+      <div class="rating-card">
+        <div class="rating-left">
+          <div class="stars">★★★★★</div>
+          <div class="rating-right">Instructor Rating</div>
+        </div>
+        <div class="rating-number">4.9</div>
+      </div>
+
+      <div class="badge-card">
+        <div class="cap">🎓</div>
+        <div class="badge-text"><strong>260+</strong><br>Online Resume Created</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Secondary section: What you get -->
+<section class="what-you-get">
+  <div class="container">
+    <div class="wyg-pill">What You Get</div>
+    <h3 class="wyg-title">You’re Not Just <span class="accent">Another Applicant</span> And Your Resume Shouldn’t Look Like One</h3>
+
+    <div class="cards-row">
+      <article class="feature-card">
+        <img src="/assets/resume.jpg" alt="" width="120" height="80">
+        <h4>A Resume Format That Gets You Interviews</h4>
+        <p>Get a professionally written, keyword-optimized resume that lands in recruiter inboxes.</p>
+      </article>
+
+      <article class="feature-card">
+        <img src="/assets/cover.png" alt="" width="120" height="80">
+        <h4>A Cover Letter Style That Stands Out Strong</h4>
+        <p>Stand out with a cover letter that speaks directly to the role and reflects your strengths.</p>
+      </article>
+
+      <article class="feature-card">
+        <img src="/assets/linkedin.png" alt="" width="120" height="80">
+        <h4>A LinkedIn Profile That Works For You</h4>
+        <p>Attract the right eyes, start conversations, and show up in recruiter searches.</p>
+      </article>
+
+      <article class="feature-card">
+        <img src="/assets/interview.png" alt="" width="120" height="80">
+        <h4>An Interview Strategy That Builds Confidence</h4>
+        <p>Interview preparation with real HR professionals so you speak clearly confidently.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Company — All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- small JS for mobile menu toggle -->
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuClose = document.getElementById('menuClose');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.style.display = 'block';
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+
+    menuClose.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+
+    // Close menu when clicking outside the panel
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        menuClose.click();
+      }
+    });
+
+    // set copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+    
+</body>
+</html>

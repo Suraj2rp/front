@@ -1,0 +1,484 @@
+/* styles.css
+Pixel-aware, responsive styles for the provided Figma mockups.
+Desktop reference width: 1440px
+Mobile reference width: 375px
+*/
+
+/* ============== Base / Vars ============== */
+:root{
+--pink-100: #fde6e8;
+--pink-200: #f9cfd5;
+--primary: #ff2b52; /* main pink/red from mock */
+--dark: #111111;
+--muted: #6b6b6b;
+--card-shadow: 0 12px 28px rgba(222, 0, 45, 0.08);
+--rounded: 24px;
+--container-max: 1200px; /* internal content width */
+font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif;
+}
+
+/* Reset & base */
+
+* { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+  margin: 0;
+  color: var(--dark);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: 14px; /* base: 16px — px sizes in code will be used to replicate view precisely */
+  }
+
+/* container centered for desktop */
+.container {
+width: 100%;
+max-width: calc(var(--container-max));
+margin: 0 auto;
+padding: 0 24px; /* preserve horizontal breathing */
+}
+
+/* ============== Header ============== */
+/* header height visually around 88px in Figma */
+.site-header {
+background: #fff;
+position: sticky;
+top: 0;
+z-index: 60;
+box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+.header-inner {
+display: flex;
+align-items: center;
+gap: 24px;
+height: 68px;
+}
+
+/* logo */
+.logo img { display: block; }
+
+/* desktop nav */
+.desktop-nav {
+display: flex;
+gap: 36px;
+margin-left: 12%;
+align-items: center;
+font-weight: 500;
+}
+.desktop-nav a {
+
+text-decoration: none;
+color: var(--dark);
+font-size: 18px; /* matches Figma's nav font */
+}
+
+/* header right actions */
+.header-cta {
+margin-left: auto;
+display: flex;
+align-items: center;
+gap: 16px;
+}
+.btn-quote {
+background: linear-gradient(180deg, #f91e46, #e6003af4);
+border: none;
+color: #fff;
+padding: 12px 20px;
+border-radius: 28px;
+font-weight: 600;
+font-size: 16px;
+box-shadow: 0 8px 22px rgba(255,43,82,0.18);
+cursor: pointer;
+}
+
+/* hamburger (hidden on desktop) */
+.hamburger {
+display: none;
+width: 48px;
+height: 40px;
+border-radius: 10px;
+border: none;
+background: transparent;
+cursor: pointer;
+}
+.hamburger span { display: block; height: 3px; background: #111; margin: 6px 0; border-radius: 3px; width: 22px; }
+
+/* ============== Mobile Menu ============== */
+.mobile-menu-overlay {
+display: none; /* toggled by JS */
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+z-index: 120;
+}
+.mobile-menu {
+width: 76%;
+max-width: 320px;
+height: 100%;
+background: var(--pink-100);
+padding: 28px;
+box-shadow: 8px 0 30px rgba(0,0,0,0.18);
+position: relative;
+overflow-y: auto;
+}
+
+/* top row in mobile menu */
+.mobile-menu-top {
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom: 40px;
+}
+.menu-close {
+background: transparent;
+border: none;
+font-size: 30px;
+color: var(--primary);
+cursor: pointer;
+}
+
+/* menu list */
+.mobile-menu-list {
+list-style: none;
+padding: 0;
+margin: 0;
+display: grid;
+gap: 28px;
+font-size: 24px; /* matches Figma mobile menu text pixel-size */
+background-color: #fde6e8; /* same light pink background */
+  width: 200px;
+  font-family: Arial, sans-serif;
+}
+.mobile-menu-list li {
+display:flex;
+align-items:center;
+gap: 18px;
+color: #111;
+padding: 15px 20px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+.mobile-menu-list li .icon { font-size: 20px; width: 36px; text-align:center; }
+.mobile-menu-list li.active { color: var(--primary); }
+.mobile-menu-list li.active,
+.mobile-menu-list li:hover {
+  color: #ff2b52; /* red highlight */
+}
+
+.mobile-menu-list li .icon i {
+  font-size: 20px;
+  color: #111;
+  width: 24px;
+  text-align: center;
+}
+
+.mobile-menu-list li.active .icon i {
+  color: #ff2b52; /* red for active icon */
+}
+
+.mobile-menu-list a {
+  text-decoration: none;
+  color: inherit;
+}
+/* mobile menu CTA */
+.mobile-menu-cta { margin-top: 40px; display:flex; justify-content:center; }
+.btn-contact {
+background: linear-gradient(180deg, #ff2b52, #e6003a);
+border-radius: 44px;
+width: 84%;
+padding: 18px 0;
+color: #fff;
+font-weight: 700;
+font-size: 20px;
+box-shadow: 0 18px 34px rgba(230,0,60,0.14);
+border: none;
+}
+
+/* ============== Hero ============== */
+.hero {
+ background: linear-gradient(180deg, #fff0f3 0%, #ffe3e7 60%);
+  position: relative;
+  overflow: hidden;}
+.hero-grid {
+display: grid;
+grid-template-columns: 1fr 560px; /* left flexible, right fixed hero image area (desktop) */
+gap: 48px;
+align-items: center;
+padding: 40px 24px;
+}
+
+/* Left column text */
+.hero-left { max-width: 680px; }
+.eyebrow {
+font-size: 48px; /* matches large heading style in Figma */
+font-family: Arial, sans-serif;
+font-weight: bold;
+margin: 2px 0;
+line-height: 50%;
+
+}
+.headline {
+font-size: 48px;
+line-height: 1.6;
+margin: 2px 0 24px;
+font-family: Arial, sans-serif;
+font-weight: bold;
+}
+.headline .line1 { color: var(--primary); text-decoration-line: none; text-underline-offset: 8px; text-decoration-thickness: 4px; }
+.headline .line2, .headline .line3 { color: var(--dark); font-family: Arial, sans-serif;}
+.line1 {
+  position: relative;
+  display: inline-block; /* Allows the span to contain absolutely positioned children */
+  font-family: Arial, sans-serif; /* Example font */
+  font-size: 48px; /*Example font size */
+  font-weight: bold; /* Example font weight */
+  color: #000;
+}
+.underline-image {
+  position: absolute;
+  bottom: -5px; /* Adjust this value to change the vertical position of the image */
+  left: 0; /* Aligns the left edge of the image with the left edge of the "Deserves A" text */
+  width: 80%;
+}
+/* Hide on mobile devices */
+@media (max-width: 768px) {
+  .underline-image {
+    display: none;
+  }
+}
+/* hero paragraph: keep the exact spacing/width to match mock */
+.hero-sub {
+font-size: 15px;
+color: var(--dark);
+margin-top: 18px;
+max-width: 520px;
+}
+
+/* hero buttons */
+.hero-buttons { margin-top: 28px; display:flex; gap:18px; align-items:center; }
+.btn-outline {
+padding: 12px 22px;
+border-radius: 26px;
+border: 2px solid #ffd2d7;
+background: #fff;
+font-weight: 600;
+letter-spacing: 0.6px;
+font-size: 14px;
+cursor: pointer;
+}
+.btn-primary {
+padding: 12px 22px;
+border-radius: 26px;
+background: linear-gradient(180deg, #ff2b52, #e6003a);
+color: #fff;
+border: none;
+font-size: 14px;
+font-weight: 700;
+box-shadow: 0 10px 24px rgba(255,43,82,0.14);
+cursor: pointer;
+}
+
+/* Right column hero image area */
+.hero-right {
+position: relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+/* Add circular broad ring behind girl image */
+.hero-right::before {
+  content: "";
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  border: 52px solid #ffd2d7; /* broad pinkish ring */
+  border-radius: 50%;
+  z-index: 0; /* behind the image */
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+}
+.hero-image {
+max-width: 420px; /* desktop scale */
+display:block;
+border-radius: 24px;
+position: relative;
+z-index: 1;
+}
+
+/* rating card (floating) */
+.rating-card {
+position: absolute;
+left: 12%;
+top: 62%;
+transform: translateY(-50%);
+background: #fff;
+border-radius: 12px;
+padding: 10px 18px;
+box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+display:flex;
+flex-direction: row-reverse;
+align-items:center;
+gap: 12px;
+width: 220px;
+z-index: 2;
+}
+.rating-number { font-size: 28px; font-weight: 800; color:#2fae94; margin-right:6px; }
+.stars { color: #f5b301; font-size: 14px; }
+.rating-right { font-size: 14px; color: var(--dark); font-weight:600; }
+
+/* badge small card */
+.badge-card {
+position: absolute;
+right: 4%;
+bottom: 10%;
+background: #fff;
+border-radius: 12px;
+padding: 12px 16px;
+box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+display:flex;
+align-items:center;
+gap:12px;
+z-index: 2;
+}
+.badge-card .cap { font-size: 30px; }
+.badge-text { font-size: 13px; color: var(--muted); }
+
+/* ============== What you get section ============== */
+.what-you-get {
+padding: 40px 0 120px;
+background: #fff;
+text-align: center;
+}
+.wyg-pill {
+
+display:inline-block ;
+background:#ffeef0;
+padding: 8px 14px;
+border-radius: 10px;
+font-size: 18px;
+margin: 12px 0;
+
+}
+
+
+.wyg-title {
+margin: 18px 0 30px;
+font-size: 48px;
+font-weight: 700;
+text-align: center;
+}
+.wyg-title .accent { color: var(--primary); }
+
+/* feature cards row */
+.cards-row {
+margin-top: 22px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 28px;
+align-items: start;
+}
+
+/* single card style */
+.feature-card {
+background: #fff;
+border-radius: 16px;
+padding: 28px;
+border: 1px solid rgba(230,0,60,0.04);
+box-shadow: 0 18px 40px rgba(6,6,6,0.03);
+text-align: center;
+}
+.feature-card img { height: 86px; object-fit: contain; margin-bottom: 16px; }
+.feature-card h4 { font-size: 18px; margin: 12px 0; font-weight: 700; }
+.feature-card p { font-size: 14px; color: var(--muted); }
+
+/* footer */
+.site-footer { padding: 28px 0; border-top: 1px solid rgba(0,0,0,0.04); text-align:center; color:var(--muted); }
+
+/* ============== Responsive Breakpoints ============== */
+
+/* Tablet and narrower (max-width 1024) adjustments */
+@media (max-width: 1024px) {
+.hero-grid { grid-template-columns: 1fr 420px; gap: 34px; padding: 34px; }
+.headline { font-size: 34px; }
+.eyebrow { font-size: 34px; }
+.line1,.line2,.line3 { font-size: 34px; }
+}
+
+/* Mobile-specific layout (width reference 375px) */
+@media (max-width: 420px) {
+/* header adjustments */
+.desktop-nav { display:none; }
+.hamburger { display: block; }
+.btn-quote { display: none; }
+
+.header-inner { height: 72px; padding: 0 12px; }
+
+/* hero becomes single column, tightly spaced */
+.hero-grid {
+grid-template-columns: 1fr;
+gap: 12px;
+padding: 18px 16px 28px;
+}
+
+.hero {
+padding-top: 24px;
+}
+
+.hero-left { text-align: center; padding-top: 6px; }
+.eyebrow { font-size: 34px; }
+.headline { font-size: 34px; line-height: 1.08; margin-top: 6px; font-weight: bold; }
+.headline .line1 { display:block; text-decoration: none; color: var(--primary); } /* mimic underline look by color on mobile */
+.headline .line2, .headline .line3 { display:block; }
+
+.hero-sub {
+font-size: 14px;
+margin: 14px auto;
+max-width: 320px;
+text-align: center;
+}
+
+.hero-buttons { flex-direction: column; gap: 16px; margin-top: 18px; align-items:center; }
+.btn-outline, .btn-primary { width: 220px; }
+
+/* hero image smaller and moved below buttons as per mobile mock */
+.hero-right {
+margin-top: 14px;
+order: 3;
+display:block;
+text-align:center;
+}
+.hero-image {
+width: 240px;
+max-width: 240px;
+margin: 0 auto;
+}
+
+/* floating cards reposition for mobile */
+.rating-card { position: absolute; left: 28px; top: calc(100% - 80px); transform: translateY(-10%); width: 170px; padding: 8px 12px; }
+.badge-card { position: absolute; right: 28px; bottom: 30px; width: 150px; padding: 10px 12px; }
+
+/* what you get stack: single column cards in mobile */
+.cards-row { grid-template-columns: 1fr; gap: 22px; margin-top: 28px; padding-bottom: 48px; }
+.feature-card { text-align:center; padding: 24px; border-radius: 18px; }
+.feature-card img { height: 72px; margin-bottom: 12px; }
+
+/* mobile menu overlay styling: overlay takes full width left as darker, panel on right */
+.mobile-menu { width: 84%; max-width: none; }
+.mobile-menu-overlay { display: none; } /* toggled with JS; initial display remains none */
+}
+
+/* Ensure mobile-menu-visible when JS sets display:block on overlay */
+.mobile-menu-overlay[aria-hidden="false"], .mobile-menu-overlay[style*="display: block"] {
+display: block;
+}
+::selection { background: #ffdbe0; color: #111; }
+
+/* Accessibility hints */
+a, button { -webkit-tap-highlight-color: transparent; outline: none; }
+button:focus, a:focus { box-shadow: 0 0 0 3px rgba(255,43,82,0.12); border-radius: 8px; }
+::placeholder { color: #e6bfc4; }
+
+/* End of styles.css */
